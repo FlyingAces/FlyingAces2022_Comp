@@ -40,7 +40,7 @@ public class LauncherSubsystem extends Subsystem
 
     public void solenoidOn()
     {
-        _solenoid.set(ControlMode.PercentOutput, 1);
+        _solenoid.set(ControlMode.PercentOutput, 0.5);
     }
 
     public void solenoidOff()
