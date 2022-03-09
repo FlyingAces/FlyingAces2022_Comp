@@ -21,7 +21,6 @@ public class LaunchCommand extends Command
     public void execute()
     {
         _launcher.bothMotorsOn();
-        _launcher.solenoidOn();
     }
 
     @Override
