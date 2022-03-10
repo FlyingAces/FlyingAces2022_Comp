@@ -9,9 +9,10 @@ public class RobotMap
     public static final int RIGHT_SLAVE_ID = 3;
     public static final int LEFT_LAUNCHER_ID = 5;
     public static final int RIGHT_LAUNCHER_ID = 6;
-    public static final int LEFT_LIFT_ID = 7;
-    public static final int RIGHT_LIFT_ID = 8;
-    public static final int SOLENOID = 10;
+    //public static final int LEFT_LIFT_ID = 7;
+    //public static final int RIGHT_LIFT_ID = 8;
+    public static final int LEFT_VEX = 7;
+    public static final int RIGHT_VEX = 8
 
     // CONSTANTS
     public static final int PULSES_PER_REVOLUTION = 2048;
