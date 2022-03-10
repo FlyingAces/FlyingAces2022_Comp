@@ -20,10 +20,10 @@ public class DrivetrainSubsystem extends Subsystem
         WPI_TalonFX rightSlave = new WPI_TalonFX(RobotMap.RIGHT_SLAVE_ID);
         WPI_TalonFX leftSlave = new WPI_TalonFX(RobotMap.LEFT_SLAVE_ID);
 
-        _leftMaster.configOpenloopRamp(0.1);
-        _rightMaster.configOpenloopRamp(0.1);
-        rightSlave.configOpenloopRamp(0.1);
-        leftSlave.configOpenloopRamp(0.1);
+        _leftMaster.configOpenloopRamp(0.2);
+        _rightMaster.configOpenloopRamp(0.2);
+        rightSlave.configOpenloopRamp(0.2);
+        leftSlave.configOpenloopRamp(0.2);
 
         _rightMaster.setInverted(true);
         rightSlave.setInverted(true);
