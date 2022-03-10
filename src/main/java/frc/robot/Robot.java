@@ -5,14 +5,17 @@
 
 package frc.robot;
 
+import edu.wpi.first.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.cameraserver.CameraServer;
 import frc.robot.commands.AutonomousCommand;
 import frc.robot.commands.CommandWithController;
 import frc.robot.subsystems.ControllerSubsystem;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the methods corresponding to
@@ -40,7 +43,7 @@ public class Robot extends TimedRobot
         chooser.setDefaultOption("Default Auto", DEFAULT_AUTO);
         chooser.addOption("My Auto", CUSTOM_AUTO);
         SmartDashboard.putData("Auto choices", chooser);
-
+        UsbCamera camera = CameraServer.startAutomaticCapture();
         teleopCommand = new CommandWithController();
         autonomousCommand = new AutonomousCommand();
         // testCommand = new TestCommand();
