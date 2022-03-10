@@ -25,7 +25,7 @@ public class ControllerSubsystem extends Subsystem
         JoystickButton rBumper = new JoystickButton(_joystick, ControllerMap.RIGHT_BUMPER);
 
         // Assign commands to buttons
-        xButton.whileHeld(new LaunchCommand(rBumper.get()));
+        xButton.whileHeld(new LaunchCommand(rBumper));
 
     }
 

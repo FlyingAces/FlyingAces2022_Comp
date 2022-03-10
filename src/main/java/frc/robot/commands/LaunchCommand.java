@@ -1,5 +1,6 @@
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.config.ControllerMap;
 import frc.robot.config.RobotMap;
@@ -9,13 +10,13 @@ import frc.robot.utils.Conversions;
 public class LaunchCommand extends Command
 {
     private LauncherSubsystem _launcher;
-    private boolean _bumperStatus;
+    private JoystickButton _rBumper;
 
 
-    public LaunchCommand(boolean bumperStatus)
+    public LaunchCommand(JoystickButton rBumper)
     {
         _launcher = LauncherSubsystem.getInstance();
-        _bumperStatus = bumperStatus;
+        _rBumper = rBumper;
         requires(_launcher);
     }
 
@@ -23,7 +24,7 @@ public class LaunchCommand extends Command
     public void execute()
     {
         _launcher.bothMotorsOn();
-        if(_bumperStatus) {
+        if(_rBumper.get() == true) {
             _launcher.solenoidOn();
         }
     }
