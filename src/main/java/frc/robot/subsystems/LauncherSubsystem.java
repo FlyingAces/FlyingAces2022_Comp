@@ -42,7 +42,7 @@ public class LauncherSubsystem extends Subsystem
 
     public void solenoidOn()
     {
-        _leftVEX.set(ControlMode.PercentOutput, 0.5);
+        _leftVEX.set(ControlMode.PercentOutput, -0.5);
         _rightVEX.set(ControlMode.PercentOutput, 0.5);
     }
 
