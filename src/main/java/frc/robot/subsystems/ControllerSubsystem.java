@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.commands.BumpCommand;
+
 import frc.robot.commands.LaunchCommand;
 import frc.robot.config.ControllerMap;
 
@@ -24,9 +25,7 @@ public class ControllerSubsystem extends Subsystem
         JoystickButton rBumper = new JoystickButton(_joystick, ControllerMap.RIGHT_BUMPER);
 
         // Assign commands to buttons
-        xButton.whileHeld(new LaunchCommand());
-        rBumper.whileHeld(new BumpCommand());
-
+        xButton.whileHeld(new LaunchCommand(rBumper.get()));
 
     }
 

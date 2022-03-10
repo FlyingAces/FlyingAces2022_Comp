@@ -9,11 +9,13 @@ import frc.robot.utils.Conversions;
 public class LaunchCommand extends Command
 {
     private LauncherSubsystem _launcher;
+    private boolean _bumperStatus;
 
 
-    public LaunchCommand()
+    public LaunchCommand(boolean bumperStatus)
     {
         _launcher = LauncherSubsystem.getInstance();
+        _bumperStatus = bumperStatus;
         requires(_launcher);
     }
 
@@ -21,6 +23,9 @@ public class LaunchCommand extends Command
     public void execute()
     {
         _launcher.bothMotorsOn();
+        if(_bumperStatus) {
+            _launcher.solenoidOn();
+        }
     }
 
     @Override
