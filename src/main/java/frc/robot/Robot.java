@@ -43,7 +43,9 @@ public class Robot extends TimedRobot
         chooser.setDefaultOption("Default Auto", DEFAULT_AUTO);
         chooser.addOption("My Auto", CUSTOM_AUTO);
         SmartDashboard.putData("Auto choices", chooser);
-        UsbCamera camera = CameraServer.startAutomaticCapture();
+        //UsbCamera camera = CameraServer.startAutomaticCapture();
+        //camera.setResolution(40, 30);
+        //camera.setFPS(15);
         teleopCommand = new CommandWithController();
         autonomousCommand = new AutonomousCommand();
         // testCommand = new TestCommand();
