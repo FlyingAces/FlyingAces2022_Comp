@@ -35,7 +35,7 @@ public class DriveToCommand extends Command
 	protected boolean isFinished()
 	{
 		// TODO: robot finishes when it covers a certain distance. [DONE]
-		return _drivetrain.getLeftCurrentPosition() >= _distance;
+		return Math.abs(_drivetrain.getLeftCurrentPosition()) >= Math.abs(_distance);
 	}
 
 	@Override
