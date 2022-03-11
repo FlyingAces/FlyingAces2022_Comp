@@ -25,7 +25,7 @@ public class TurnToCommand extends Command
 	@Override
 	protected void execute()
 	{
-		_drivetrain.arcadeDrive(0, _degree / Math.abs(_degree));
+		_drivetrain.arcadeDrive(0, (_degree / Math.abs(_degree)/2.5));
 	}
 
 	@Override

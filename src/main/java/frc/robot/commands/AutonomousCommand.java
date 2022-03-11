@@ -15,6 +15,8 @@ public class AutonomousCommand extends CommandGroup
 		addSequential(new DriveToCommand(-72));
 		addSequential(new AutoShootCommand(), 2);
 		addSequential(new AutoFlickCommand(), 2);
+		addSequential(new TurnToCommand(45), 0.5);
+		addSequential(new DriveToCommand( 240));
 
 	}
 }
