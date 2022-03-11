@@ -2,16 +2,20 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.subsystems.DrivetrainSubsystem;
+import frc.robot.utils.Conversions;
 
 public class TurnToCommand extends Command
 {
 	private DrivetrainSubsystem _drivetrain;
 	private double _degree;
+	private double _arcLength;
 
 	public TurnToCommand(double degree)
 	{
 		_drivetrain = DrivetrainSubsystem.getInstance();
 		_degree = degree;
+		_arcLength = (degree/360) * 22.5 * Math.PI;
+		_arcLength = Conversions.convertPositionToEncoderPulses(_arcLength, 6);
 
 		requires(_drivetrain);
 	}
@@ -31,7 +35,7 @@ public class TurnToCommand extends Command
 	@Override
 	protected boolean isFinished()
 	{
-		return false;
+		return (_drivetrain.getLeftCurrentPosition()/ _drivetrain.getRightCurrentPosition()) >= _arcLength;
 	}
 
 	@Override
