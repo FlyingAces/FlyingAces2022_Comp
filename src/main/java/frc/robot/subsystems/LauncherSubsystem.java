@@ -30,8 +30,8 @@ public class LauncherSubsystem extends Subsystem
 
     public void bothMotorsOn()
     {
-        _leftMotor.set(ControlMode.PercentOutput, 0.5);
-        _rightMotor.set(ControlMode.PercentOutput, 0.5);
+        _leftMotor.set(ControlMode.PercentOutput, 0.60);
+        _rightMotor.set(ControlMode.PercentOutput, 0.60);
     }
 
     public void bothMotorsOff()

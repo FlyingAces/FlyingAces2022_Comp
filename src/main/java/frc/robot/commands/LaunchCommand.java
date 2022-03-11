@@ -26,6 +26,8 @@ public class LaunchCommand extends Command
         _launcher.bothMotorsOn();
         if(_rBumper.get() == true) {
             _launcher.solenoidOn();
+        }else {
+            _launcher.solenoidOff();
         }
     }
 
