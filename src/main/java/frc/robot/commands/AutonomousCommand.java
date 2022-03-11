@@ -13,8 +13,8 @@ public class AutonomousCommand extends CommandGroup
 		_launcher = LauncherSubsystem.getInstance();
 		// distance in inches
 		addSequential(new DriveToCommand(-72));
-		_launcher.bothMotorsOn();
-		_launcher.solenoidOn();
+		addSequential(new AutoShootCommand(), 2);
+		addSequential(new AutoFlickCommand(), 2);
 
 	}
 }
