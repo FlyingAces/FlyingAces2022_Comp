@@ -16,6 +16,7 @@ public class TurnToCommand extends Command
 		_degree = degree;
 		_arcLength = (degree/360) * 22.5 * Math.PI;
 		_arcLength = Conversions.convertPositionToEncoderPulses(_arcLength, 6);
+		_drivetrain.zeroDrivetrain();
 
 		requires(_drivetrain);
 	}
@@ -30,12 +31,17 @@ public class TurnToCommand extends Command
 	protected void execute()
 	{
 		_drivetrain.arcadeDrive(0, (_degree / Math.abs(_degree)/2.5));
+		System.out.println("Drivetrain POS: " + Math.abs(_drivetrain.getRightCurrentPosition()));
+		System.out.println("Arc Len: " + Math.abs(_arcLength));
+		System.out.println("End" + (Math.abs(_drivetrain.getRightCurrentPosition()) >=  Math.abs(_arcLength)));
 	}
 
 	@Override
 	protected boolean isFinished()
 	{
-		return (_drivetrain.getLeftCurrentPosition()/ _drivetrain.getRightCurrentPosition()) >= _arcLength;
+
+		return Math.abs(_drivetrain.getRightCurrentPosition()) >=  Math.abs(_arcLength);
+
 	}
 
 	@Override
