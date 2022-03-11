@@ -8,7 +8,7 @@ public class Conversions
 	{
 		double circumference = Math.PI * wheelDiameter;
 
-		return (inches / circumference) * RobotMap.PULSES_PER_REVOLUTION;
+		return ((inches / circumference) * RobotMap.PULSES_PER_REVOLUTION)*4;
 	}
 
 	public static double convertEncoderPulsesToPosition(double position, double wheelDiameter)

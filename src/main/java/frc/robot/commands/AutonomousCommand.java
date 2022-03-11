@@ -9,6 +9,6 @@ public class AutonomousCommand extends CommandGroup
 	public AutonomousCommand()
 	{
 		// distance in inches
-		addSequential(new DriveToCommand(300));
+		addSequential(new DriveToCommand(-300));
 	}
 }
