@@ -23,7 +23,7 @@ public class LaunchCommand extends Command
     @Override
     public void execute()
     {
-        _launcher.bothMotorsOn();
+        _launcher.bothMotorsOn(0.60);
         if(_rBumper.get() == true) {
             _launcher.solenoidOn();
         }else {

@@ -28,10 +28,10 @@ public class LauncherSubsystem extends Subsystem
         _rightMotor.setInverted(true);
     }
 
-    public void bothMotorsOn()
+    public void bothMotorsOn(double speed)
     {
-        _leftMotor.set(ControlMode.PercentOutput, 0.60);
-        _rightMotor.set(ControlMode.PercentOutput, 0.60);
+        _leftMotor.set(ControlMode.PercentOutput, speed);
+        _rightMotor.set(ControlMode.PercentOutput, speed);
     }
 
     public void bothMotorsOff()

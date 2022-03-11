@@ -18,7 +18,7 @@ public class AutoFlickCommand extends Command {
 	@Override
 	protected void execute()
 	{
-		_launcher.bothMotorsOn();
+		_launcher.bothMotorsOn(0.60);
 		_launcher.solenoidOn();
 	}
 
