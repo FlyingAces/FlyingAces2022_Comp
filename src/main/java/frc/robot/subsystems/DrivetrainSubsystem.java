@@ -1,5 +1,6 @@
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -19,6 +20,10 @@ public class DrivetrainSubsystem extends Subsystem
         _rightMaster = new WPI_TalonFX(RobotMap.RIGHT_MASTER_ID);
         WPI_TalonFX rightSlave = new WPI_TalonFX(RobotMap.RIGHT_SLAVE_ID);
         WPI_TalonFX leftSlave = new WPI_TalonFX(RobotMap.LEFT_SLAVE_ID);
+        _rightMaster.setNeutralMode(NeutralMode.Brake);
+        _leftMaster.setNeutralMode(NeutralMode.Brake);
+        rightSlave.setNeutralMode(NeutralMode.Brake);
+        leftSlave.setNeutralMode(NeutralMode.Brake);
 
         _leftMaster.configOpenloopRamp(0.2);
         _rightMaster.configOpenloopRamp(0.2);
