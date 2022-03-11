@@ -18,7 +18,7 @@ public class AutoShootCommand extends Command {
 	@Override
 	protected void execute()
 	{
-		_launcher.bothMotorsOn(0.60);
+		_launcher.bothMotorsOn(0.53);
 	}
 
 	@Override

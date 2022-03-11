@@ -28,7 +28,7 @@ public class DriveToCommand extends Command
 	protected void execute()
 	{
 		// normalizes acceleration value to 1.0 or -1.0 depending on the distance.
-		_drivetrain.arcadeDrive((_distance / Math.abs(_distance))/3, 0);
+		_drivetrain.arcadeDrive((_distance / Math.abs(_distance))/2.5, 0);
 	}
 
 	@Override
